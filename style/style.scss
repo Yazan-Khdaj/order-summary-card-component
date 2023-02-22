@@ -1,0 +1,132 @@
+// Variables
+
+//  Colors
+$pale-blue: hsl(225, 100%, 94%);
+$btn-color: hsl(245, 75%, 52%);
+$light-color: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$title-color: hsl(223, 47%, 23%);
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$font: "Red Hat Display", sans-serif;
+$fs-main: 16px;
+$fw-main: 500;
+$fw-bold: 700;
+$fw-larg: 900;
+
+// Mixin
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @include center;
+    flex-direction: column;
+    font-family: $font;
+    font-size: $fs-main;
+    background-image: url(../images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+
+.container{
+    margin: 50px auto;
+    width: 375px;
+}
+
+.card{
+    margin: 0 1rem;
+    background-color: $light-color;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    .card__content{
+         @include center;
+         flex-direction: column;
+         gap: 1rem;
+         padding: 2rem;
+         text-align: center;
+
+        .text{
+            .title{
+                font-size: 1.5rem;
+                font-weight: $fw-larg;
+                color: $title-color;
+            }
+            p{
+                line-height: 1.6;
+                color: $desaturated-blue;
+                padding: 1rem .5rem;;
+            }
+        }
+        .content__plan{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba($pale-blue, .2);
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+
+            .plan{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .plan__price{
+                     line-height: 1.6;
+
+                    h4{
+                        color : $title-color;
+                        font-weight: $fw-bold
+                    }
+                    p{
+                        color: $desaturated-blue;
+                    }
+                }
+            }
+            a{
+                font-size: 0.78rem;
+                font-weight: 600;
+
+                &:hover{
+                    text-decoration: none;
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
